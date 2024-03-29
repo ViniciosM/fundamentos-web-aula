@@ -1,18 +1,18 @@
 body {
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
   align-items: center;
-  justify-content: center;
   height: 100vh;
   margin: 0;
-  font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+  font-family:'Courier New', Courier, monospace;
   background-color: #434343;
 }
 
+
+
+
 nav {
   text-align: center;
-  text-align: center;
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -28,7 +28,7 @@ nav ul {
 
 nav li {
   display: inline-block;
-  margin: 0 10px;
+  margin: 10px;
  
 }
 
@@ -37,12 +37,19 @@ nav a {
   text-decoration: none;
 }
 
+.menu a:hover {
+  background-color: #555; /* Cor de fundo do link ao passar o mouse */
+}
+
 
 
 .content {
   text-align: justify;
-  max-width: 600px;margin-top: 50px; /* Adiciona espaço abaixo do menu */
+  max-width: 600px;
+  margin-bottom: 100px;
+  margin-top: 50px; /* Adiciona espaço abaixo do menu */
   padding: 0 20px; /* Adiciona padding à área de conteúdo */
+
 }
 
 .content h1 {
@@ -71,6 +78,13 @@ color: #fff
 form {
   max-width: 400px;
   margin: 0 auto;
+  color: #fff;
+}
+
+.form h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+color: #fff
 }
 
 /* Estilo para os rótulos dos campos */
@@ -101,6 +115,7 @@ input[type="submit"] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 /* Estilo para o botão de envio ao passar o mouse */
@@ -113,32 +128,53 @@ textarea {
   resize: vertical; /* Permite redimensionar verticalmente */
 }
 
-footer {
+.footer {
   background-color: #434343;
   color: white;
   text-align: center;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  padding: 5px;
+  font-size: 0.9em;
+ 
 }
 
 
+.portfolio-container {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  padding: 20px;
+}
 
-/* media query para dispositivos móveis */
-/* @media only screen and (max-width: 767px) {
-    .wrapper {
-        grid-column-start: 1;
-        grid-column-end: 1;
-    }
+.portfolio-item {
+  flex: 0 1 calc(33.33% - 20px);
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 
-    .avatar {
-        grid-column-start: 1;
-        grid-column-end: 1;
-        
-    }
+.portfolio-item img {
+  max-width: 100%;
+  max-height: 50%;
+  height:auto;
+  border-radius: 10px;
+}
 
-    .principal {
-        grid-column-start: 1;
-        grid-column-end: 1;
-    }
-} */
+/* Estilos para telas menores */
+@media screen and (max-width: 768px) {
+  .portfolio-item {
+      flex-basis: calc(50% - 20px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .portfolio-item {
+      flex-basis: calc(100% - 20px);
+  }
+}
+
+
